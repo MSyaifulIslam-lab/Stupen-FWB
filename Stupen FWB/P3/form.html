@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form</title>
+    <link rel="icon" type="image/x-icon" href="2.jpg">
+  </head>
+  <body bgcolor="beige">
+    <p>
+        <h2>Just A Simple Form</h2>
+    </p>
+    <form action="" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="full name" autocomplete="on" required/>
+      <br /><br />
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="ur fc*n age">
+      <br><br>
+      <label for="">Choose Your Country</label>
+      <br>
+      <select name="country" id="">
+        <option value="Amerisya Usyara">Amerisya Usyara</option>
+        <option value="India">India</option>
+        <option value="Jepang">Jepang</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Kesultanan Rongawi">Kesultanan Rongawi</option>
+        <option value="Rongawi Utara">Rongawi Utara</option>
+        <option value="Rongawi Selatan">Rongawi Selatan</option>
+      </select>
+      <br><br>
+      <label for="">Jenis Kelamin <br><input type="radio" name="gender" value="male">Pria</label>
+      <label for=""><input type="radio" name="gender" value="female">Wanita</label>
+      <br><br>
+      <textarea name="curhat" id="curhat" placeholder="tell me ur secret"></textarea>
+      <br><br>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required/>
+      <br /><br />
+      <label for="pw">Password</label>
+      <input type="password" id="pw" name="pw" minlength="5" maxlength="12" required>
+      <br><br>
+      <label for=""><input type="checkbox" name="sk" value="persetujuan">Saya setuju dengan syarat dan ketentuan</label>
+      <br><br>
+      <button type="submit" value="send">Send</button>
+    </form>
+  </body>
+</html>

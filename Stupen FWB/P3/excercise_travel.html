@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan Tiket</title>
+    <link rel="icon" type="image/x-icon" href="j.jpg">
+  </head>
+  <body bgcolor="beige">
+    <p>
+        <h2>Traveloka</h2>
+    </p>
+    <form action="" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="insert full name" autocomplete="on" required/>
+      <br /><br />
+      <label for="nik">NIK</label>
+      <input type="number" id="nik" name="nik" placeholder="insert your id" autocomplete="off" required/>
+      <br><br>
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="ur fc*n age">
+      <br><br>
+      <label for="">Gender<br><input type="radio" name="gender" value="male">Pria</label>
+      <label for=""><input type="radio" name="gender" value="female">Wanita</label>
+      <br><br>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required/>
+      <br><br>
+      <label for="tlp">Phone</label>
+      <input type="tel" id="tlp" name="tlp" minlength="5" maxlength="12" required>
+      <br><br>
+      <label for="dep">Choose Your Departure</label>
+      <br>
+      <select name="departure" id="dep" name="dep"required>
+        <option value="Amerisya Usyara">Amerisya Usyara</option>
+        <option value="India">India</option>
+        <option value="Jepang">Jepang</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Kesultanan Rongawi">Kesultanan Rongawi</option>
+        <option value="Rongawi Utara">Rongawi Utara</option>
+        <option value="Rongawi Selatan">Rongawi Selatan</option>
+      </select>
+      <br><br>
+      <label for="dep-date">Departure Date</label>
+      <input type="date" id="dep-date" name="dep-date"required>
+      <br><br>
+      <label for="dep-time">Departure Time</label>
+      <input type="time" id="dep-time" name="dep-time" required>
+      <p>To</p>
+      <label for="des">Choose Your Destination</label>
+      <br>
+      <select name="destination" id="des" name="des" required>
+        <option value="Amerisya Usyara">Amerisya Usyara</option>
+        <option value="India">India</option>
+        <option value="Jepang">Jepang</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Kesultanan Rongawi" selected>Kesultanan Rongawi</option>
+        <option value="Rongawi Utara">Rongawi Utara</option>
+        <option value="Rongawi Selatan">Rongawi Selatan</option>
+      </select>
+      <br><br>
+      <label for="pssngr">Number of Passengers</label>
+      <br>
+      <input type="number" id="pssngr" name="pssngr" min="1" value="1" required>
+      <br><br>
+      <label for="payment">Payment Method</label>
+      <br>
+      <select name="payment" id="payment" required>
+        <option value="choose">choose</option>
+        <option value="bank-transfer">Bank Transfer</option>
+        <option value="credit">Credit Card</option>
+        <option value="e-wallet">E-Wallet</option>
+      </select>
+      <br><br>
+      <textarea name="mssg" id="mssg" placeholder="message"></textarea>
+      <br><br>
+      <label for=""><input type="checkbox" name="terms" required>Saya setuju dengan syarat dan ketentuan</label>
+      <br><br>
+      <button type="submit" value="send">Book Tickets</button>
+    </form>
+  </body>
+</html>
