@@ -1,0 +1,26 @@
+table {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+tr {
+  text-align: center;
+}
+
+#y:hover {
+  background-color: khaki;
+  font-family: "Courier New";
+  color: crimson;
+}
+
+.g:hover {
+  background-color: aqua;
+  font-family: "Franklin Gothic Medium";
+  color: darkgreen;
+}
+
+td {
+  padding: 5px;
+}

@@ -1,0 +1,14 @@
+#nama {
+  width: 100px;
+}
+
+.panggilan {
+  width: 50px;
+}
+
+button {
+  background-color: greenyellow;
+  display: flex;
+  border: 2px solid lime;
+  color: black;
+}

@@ -1,0 +1,82 @@
+h1 {
+  text-align: center;
+}
+
+h5 {
+  color: black;
+  /* text-align: left; */
+  font-family: "Gill Sans";
+  font-size: 15pt;
+  margin-bottom: 2%;
+  margin-left: 10%;
+}
+
+h3 {
+  font-size: 15pt;
+  font-family: "Gill Sans";
+  margin-left: 10%;
+}
+
+table {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+tr {
+  padding: 5px;
+  border: 2px solid maroon;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: darkkhaki;
+  color: brown;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+td {
+  padding: 5px;
+}
+
+p {
+  text-align: justify;
+}
+
+#po {
+  font-family: "Courier New", Courier, monospace;
+  color: magenta;
+}
+
+div {
+  font-family: "Franklin Gothic Medium";
+  color: darkblue;
+}
+
+.header {
+  background-image: url("../img/2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.navbar {
+  font-size: 10pt;
+  overflow: hidden; /* untuk membuat posisi box */
+  background-color: khaki;
+  justify-content: center;
+  display: flex;
+}
+
+.navbar a {
+  padding: 5px;
+}
+
+.navbar a:hover {
+  background-color: gray;
+  color: greenyellow;
+}
