@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Time!</title>
+  </head>
+  <body>
+    <script>
+      // Tipe data
+      let fullName = "M Syaiful Islam";
+      let callName = "Ipul";
+      let age = 20;
+      let address = ["Kp.Babakan rt" + 1 + "rw" + 5];
+      let hobbies = [
+        "Playing Football",
+        "Playing Basketball",
+        "Playing Volleyball",
+      ];
+
+      // Untuk Print Js
+      document.write("<h3>Data Diri<h3/>");
+      document.write("Nama: " + fullName + "<br/>");
+      document.write("Panggilan: " + callName + "<br/>");
+      document.write("Umur: " + age + "<br/>");
+      document.write("Alamat: " + address + "<br/>");
+      document.write("Hobi: " + hobbies + "<br/><br/>");
+
+      // Operator
+      let x = 10;
+      let y = 5;
+
+      document.write("Jumlah dari 10 + 5: " + (x + y) + "<br/><br/>");
+
+      // Normal Function
+      function greet(name) {
+        return "Hello, " + name;
+      }
+
+      // Arrow Function
+      const greetArrow = (name) => `Hello, ${name}`;
+
+      document.write(greet("Alexa" + "!" + "<br/>"));
+      document.write(greetArrow("Alexander" + "!" + "<br/><br/>"));
+    </script>
+  </body>
+</html>

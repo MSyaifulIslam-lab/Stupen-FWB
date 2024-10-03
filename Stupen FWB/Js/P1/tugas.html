@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tugas js</title>
+  </head>
+  <body>
+    <script>
+      function luasLingkaran(jariJari) {
+        const pi = 3.14;
+        return pi * jariJari * jariJari; // mengembalikan nilai dalam bentuk rumus
+      }
+
+      const kelilingLingkaran = (jariJari) => 2 * Math.PI * jariJari;
+
+      const jariJari = 15;
+      const hasilLuas = luasLingkaran(jariJari);
+      const hasilKeliling = kelilingLingkaran(jariJari);
+
+      document.write(
+        "Luas lingkaran dengan r = 15 adalah: ",
+        hasilLuas,
+        "<br />"
+      );
+      document.write(
+        "Keliling lingkaran dengan r = 15 adalah: ",
+        hasilKeliling
+      );
+    </script>
+  </body>
+</html>
