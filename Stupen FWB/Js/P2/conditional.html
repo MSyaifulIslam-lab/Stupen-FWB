@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // contoh if kondisional
+      let pelanggan = "Syaiful";
+      let totalBelanja = 150000;
+      let keterangan = "";
+
+      if (totalBelanja > 1000000) {
+        keterangan = " Anda mendapatkan potongan sebesar 30%";
+      } else {
+        keterangan = " Anda mendapatkan Honda Brio";
+      }
+      document.write(
+        "Nama Pelanggan: " + pelanggan + "<br/> Keterangan: " + keterangan
+      );
+
+      document.write("<hr/>");
+      document.write("Contoh Ternary<br/>");
+
+      let deskripsi =
+        totalBelanja > 1000000
+          ? " Mendapatkan Honda Jazz"
+          : " Mendapatkan Piring";
+      document.write(
+        "Nama Pelanggan: " +
+          pelanggan +
+          " Total belanja " +
+          totalBelanja +
+          " Dinyatakan" +
+          deskripsi
+      );
+    </script>
+  </body>
+</html>

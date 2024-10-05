@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nama = "Syaiful";
+      let nilai = 96;
+      let grade = "";
+
+      if (nilai > 85 && nilai <= 100) grade = "A";
+      else if (nilai > 75 && nilai <= 84) grade = "B";
+      else if (nilai > 60 && nilai <= 74) grade = "C";
+      else if (nilai > 30 && nilai <= 59) grade = "D";
+      else if (nilai > 10 && nilai <= 29) grade = "E";
+      else grade = "FAIL";
+
+      document.write(
+        "Nama: " + nama + "<br/> Nilai: " + nilai + "<br/> Grade: " + grade
+      );
+    </script>
+  </body>
+</html>

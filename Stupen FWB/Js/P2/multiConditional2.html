@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let pelanggan = "Syaiful";
+      let produk = "AC";
+
+      // harga masing-masing produk
+      if (produk == "TV") {
+        harsat = 1500000;
+      } else if (produk == "Kulkas") {
+        harsat = 4000000;
+      } else if (produk == "AC") {
+        harsat = 3000000;
+      } else {
+        harsat = 0;
+      }
+
+      // tentukan total harga dan total diskon
+      let jmlBeli = 10;
+      let hargaKotor = harsat * jmlBeli;
+      // untuk ternary
+      let diskon =
+        produk == "AC"
+          ? 0.3 * hargaKotor
+          : produk == "Kulkas"
+          ? 0.3 * hargaKotor
+          : 0;
+
+      document.write(
+        "Data Pembelian: " +
+          "<br/> Nama Pelanggan: " +
+          pelanggan +
+          "<br/> Produk: " +
+          produk +
+          "<br/> Jumlah Beli: " +
+          jmlBeli +
+          "<br/> Harga Satuan: " +
+          harsat +
+          "<br/> Harga Kotor: " +
+          hargaKotor +
+          "<br/> Diskon: " +
+          diskon +
+          "<br/> Total Bayar: " +
+          (hargaKotor - diskon)
+      );
+    </script>
+  </body>
+</html>
