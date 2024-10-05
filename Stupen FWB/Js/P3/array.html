@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Its Array Time</title>
+  </head>
+  <body>
+    <script>
+      let buah = ["pepaya", "mangga", "pisang", "jambu", "nanas"];
+      document.write(buah);
+
+      document.write("<br/>");
+
+      document.write("Data lama pada index ke 2 adalah: " + buah[2]); // menampilkan data pada sebuah index
+
+      document.write("<br/>");
+
+      buah[2] = "jeruk";
+      document.write("Data baru pada index ke 2 adalah: " + buah[2]);
+
+      document.write("<hr/>");
+      for (let i = 0; i < buah.length; i++) {
+        //length disini berfungsi untuk menunjukkan panjang string yang akan dicetak
+        document.write("<br/> List buah: " + buah[i]);
+      }
+    </script>
+  </body>
+</html>

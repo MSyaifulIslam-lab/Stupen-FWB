@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop & Array</title>
+  </head>
+  <body>
+    <script>
+      let s1 = {
+        No: 1,
+        Nama: "Forte",
+        Nilai: 50,
+        Grade: "",
+        Keterangan: "",
+        Predikat: "",
+      };
+      let s2 = {
+        No: 2,
+        Nama: "Ipul",
+        Nilai: 95,
+        Grade: "",
+        Keterangan: "",
+        Predikat: "",
+      };
+      let s3 = {
+        No: 3,
+        Nama: "Marlong",
+        Nilai: 80,
+        Grade: "",
+        Keterangan: "",
+        Predikat: "",
+      };
+      let s4 = {
+        No: 4,
+        Nama: "Dunhill",
+        Nilai: 30,
+        Grade: "",
+        Keterangan: "",
+        Predikat: "",
+      };
+      let s5 = {
+        No: 5,
+        Nama: "Aroma",
+        Nilai: 75,
+        Grade: "",
+        Keterangan: "",
+        Predikat: "",
+      };
+
+      let siswa = [s1, s2, s3, s4, s5];
+
+      for (let i = 0; i < siswa.length; i++) {
+        let limaSiswa = siswa[i];
+        let Nilai = limaSiswa.Nilai;
+
+        if (Nilai > 85 && Nilai <= 100) limaSiswa.Grade = "A";
+        else if (Nilai > 75 && Nilai <= 84) limaSiswa.Grade = "B";
+        else if (Nilai > 60 && Nilai <= 74) limaSiswa.Grade = "C";
+        else if (Nilai > 30 && Nilai <= 59) limaSiswa.Grade = "D";
+        else if (Nilai > 10 && Nilai <= 29) limaSiswa.Grade = "E";
+        else limaSiswa.Grade = "F";
+
+        limaSiswa.Keterangan = Nilai >= 60 ? "lulus" : "gagal";
+        limaSiswa.Predikat = Nilai >= 75 ? "Gut" : "Not Gut";
+      }
+    </script>
+    <table
+      style="padding: 10; text-align: center; width: 100%; border: 1px solid"
+    >
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Nilai</th>
+          <th>Grade</th>
+          <th>Keterangan</th>
+          <th>Predikat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          for (s of siswa) {
+            document.write(`<tr>
+                      <td>${s.No}</td>
+                      <td>${s.Nama}</td>
+                      <td>${s.Nilai}</td>
+                      <td>${s.Grade}</td>
+                      <td>${s.Keterangan}</td>
+                      <td>${s.Predikat}</td>
+                      </tr>`);
+          }
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>

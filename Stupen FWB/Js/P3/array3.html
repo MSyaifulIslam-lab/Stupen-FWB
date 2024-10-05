@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Still Array</title>
+  </head>
+  <body>
+    <script>
+      let p1 = { Nama: "Budi", Divisi: "Marketing", Gaji: 8000000 };
+      let p2 = { Nama: "Rusdi", Divisi: "Muani", Gaji: 10000000 };
+      let p3 = { Nama: "Ambawi", Divisi: "Cyber", Gaji: 12000000 };
+      let p4 = { Nama: "Billie", Divisi: "LC", Gaji: 20000000 };
+
+      // untuk mengubah data object menjadi data array / dikumpulkan kedalam array
+      let pegawai = [p1, p2, p3, p4];
+      // tujuan dikumpulkan ke dalam array adalah untuk memudahkan saat mengakses data
+      // ketika variable pegawai dipanggil, maka seluruh data dari p1 hingga p4 akan terpanggil
+
+      // untu memanggil object dari pegawai
+      for (let i = 0; i < pegawai.length; i++) {
+        document.write("<br/> " + pegawai[i]);
+      }
+      document.write("<hr/>");
+
+      // untuk menampilkan data
+      for (p of pegawai) {
+        document.write("<br/> " + p.Nama);
+        document.write("<br/> " + p.Divisi);
+        document.write("<br/> " + p.Gaji);
+      }
+    </script>
+    <table
+      style="padding: 10; text-align: center; width: 100%; border: 1px solid"
+    >
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Divisi</th>
+          <th>Gaji</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          for (p of pegawai) {
+            document.write(`<tr>
+                      <td>${p.Nama}</td>
+                      <td>${p.Divisi}</td>
+                      <td>${p.Gaji}</td>
+                      </tr>`);
+          }
+          // `` backtique => untuk membuka string pada javasript
+          // berlaku juga untuk pemanggilan variable menggunakan ${variable}
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>

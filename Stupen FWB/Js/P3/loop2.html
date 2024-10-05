@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Still Looping Time</title>
+  </head>
+  <body>
+    <table
+      style="padding: 10; text-align: center; width: 100%; border: 1px solid"
+    >
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          let warna, no;
+          for (no = 1; no <= 20; no++) {
+            warna = no % 2 == 0 ? "beige" : "wheat";
+            document.write(`<tr bgcolor="${warna}">
+                        <td>${no}</td>
+                        <td>Peserta ${no}</td>
+                        <td>Jl. Raya ${no}</td>
+                        </tr>`);
+          }
+          // `` backtique => untuk membuka string pada javasript
+          // berlaku juga untuk pemanggilan variable menggunakan ${variable}
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>

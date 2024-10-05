@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Still Array</title>
+  </head>
+  <body>
+    <h2>Javascript Array dan DOM</h2>
+    <ul id="mobil">
+      <li></li>
+    </ul>
+
+    <script>
+      // contoh looping menggunakan for of untuk akses array
+      const mobil = ["Toyota", "Honda", "Suzuki", "Mitsubishi"];
+      let dataMobil = "";
+      for (c of mobil) {
+        dataMobil += `<li>${c}</li>`;
+      }
+
+      document.getElementById("mobil").innerHTML = dataMobil;
+    </script>
+
+    <script>
+      // for in biasa digunakan untuk memanggil object
+      // for in juga bisa digunakan untuk memanggil key atau value
+      document.write("<hr/>");
+      let p1 = {
+        Nama: "Budi",
+        Divisi: "HRD",
+        Gaji: 10000000,
+      };
+      // for in untuk mengakses key saja
+      for (x in p1) {
+        // x disini sbg variable pengganti untuk memanggil key
+        // document.write("<br/> Key: " + x);
+      }
+      // for in untuk mengakses value saja
+      for (y in p1) {
+        // y disini sbg variable pengganti untuk memanggil value
+        // document.write("<br/> Value: " + y);
+      }
+      // for in untuk mengakses key dan value
+      for (z in p1) {
+        // z disini sbg variable pengganti untuk memanggil key dan value
+        document.write("<br/>" + z, ": ", p1[z]);
+      }
+      // Array di JS hanya dapat mengelompokkan data dari satu tipe data yang sama
+      // Sedangkan object dapat mengelompokkan beberapa tipe data yang berbeda
+      // object sendiri terdiri dari key dan value, contoh key => "Nama", "Divisi" yang biasanya itu merupakan sebuah column atau header column dalam table
+      // Contoh value => "Budi", "HRD"
+      // Jadi singkatnya, Key = Data sedangkan value = Isi Data
+      // Object dalam JS mirip dengan array assosiative dalam PHP
+    </script>
+  </body>
+</html>
