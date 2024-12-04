@@ -1,0 +1,277 @@
+Asus@PUL c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 17
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bebas              |
+| classicmodels      |
+| dbkoperasi         |
+| dbnews             |
+| dbrental           |
+| dbtransaksi        |
+| information_schema |
+| msib7              |
+| mysql              |
+| nfcomsyaiful       |
+| performance_schema |
+| phpmyadmin         |
+| puskesmas          |
+| rental             |
+| soal4_0110222143   |
+| test               |
+| yoimi              |
++--------------------+
+17 rows in set (0.146 sec)
+
+MariaDB [(none)]> use dbtransaksi;
+Database changed
+MariaDB [dbtransaksi]> SELECT * FROM produk ORDER BY harga_jual DESC;
++----+------+------------------+------------+------------+------+----------+-----------------+
+| id | kode | nama             | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+------------------+------------+------------+------+----------+-----------------+
+|  9 | LN01 | Notebook Lenovo  |    9000000 |   12000000 |    3 |        2 |               5 |
+|  8 | AC01 | Notebook Acer    |    8000000 |   10800000 |    1 |        2 |               5 |
+|  6 | PC01 | PC Desktop HP    |    7000000 |    9600000 |    3 |        2 |               5 |
+|  2 | TV02 | Televisi 40 inch |    5500000 |    7737600 |    5 |        2 |               1 |
+|  1 | TV01 | Televisi 21 inch |    3500000 |    5241600 | NULL |        2 |               1 |
+|  3 | K001 | Kulkas 2 pintu   |    3500000 |    4867200 |    0 |        2 |               1 |
+|  4 | M001 | Meja Makan       |     500000 |     660000 |    6 |        3 |               2 |
+|  5 | TK01 | Teh Kotak        |       3000 |       4235 |    0 |       10 |               4 |
+|  7 | TB01 | Teh Botol        |       2000 |       3025 |   39 |       10 |               4 |
++----+------+------------------+------------+------------+------+----------+-----------------+
+9 rows in set (0.003 sec)
+
+MariaDB [dbtransaksi]> SELECT kode, nama, tmp_lahir, tgl_lahir FROM pelanggan;
++------+---------------+------------+------------+
+| kode | nama          | tmp_lahir  | tgl_lahir  |
++------+---------------+------------+------------+
+| C001 | Agung Sedayu  | Solo       | 2010-01-01 |
+| C002 | Pandan Wangi  | Yogyakarta | 1950-01-01 |
+| C003 | Sekar Mirah   | Kediri     | 1983-02-20 |
+| C004 | Swandaru Geni | Kediri     | 1981-01-04 |
+| C005 | Pradabashu    | Pati       | 1985-04-02 |
+| C006 | Gayatri Dwi   | Jakarta    | 1987-11-28 |
+| C007 | Dewi Gyat     | Jakarta    | 1988-12-01 |
+| C008 | Andre Haru    | Surabaya   | 1990-07-15 |
+| C009 | Ahmad Hasan   | Surabaya   | 1992-10-15 |
+| C010 | Cassanndra    | Belfast    | 1990-11-20 |
++------+---------------+------------+------------+
+10 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT kode, nama, stok FROM produk WHERE stok = 4;
+Empty set (0.005 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE tmp_lahir = 'jakarta';
++----+------+-------------+------+-----------+------------+------------------+----------+
+| id | kode | nama        | jk   | tmp_lahir | tgl_lahir  | email            | kartu_id |
++----+------+-------------+------+-----------+------------+------------------+----------+
+|  6 | C006 | Gayatri Dwi | P    | Jakarta   | 1987-11-28 | gaya87@gmail.com |        1 |
+|  7 | C007 | Dewi Gyat   | P    | Jakarta   | 1988-12-01 | giyat@gmail.com  |        1 |
++----+------+-------------+------+-----------+------------+------------------+----------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT kode, nama, tmp_lahir, tgl_lahir FROM pelanggan ORDER BY tgl_lahir DESC;
++------+---------------+------------+------------+
+| kode | nama          | tmp_lahir  | tgl_lahir  |
++------+---------------+------------+------------+
+| C001 | Agung Sedayu  | Solo       | 2010-01-01 |
+| C009 | Ahmad Hasan   | Surabaya   | 1992-10-15 |
+| C010 | Cassanndra    | Belfast    | 1990-11-20 |
+| C008 | Andre Haru    | Surabaya   | 1990-07-15 |
+| C007 | Dewi Gyat     | Jakarta    | 1988-12-01 |
+| C006 | Gayatri Dwi   | Jakarta    | 1987-11-28 |
+| C005 | Pradabashu    | Pati       | 1985-04-02 |
+| C003 | Sekar Mirah   | Kediri     | 1983-02-20 |
+| C004 | Swandaru Geni | Kediri     | 1981-01-04 |
+| C002 | Pandan Wangi  | Yogyakarta | 1950-01-01 |
++------+---------------+------------+------------+
+10 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE stok = 3 OR stok = 10;
++----+------+-----------------+------------+------------+------+----------+-----------------+
+| id | kode | nama            | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+-----------------+------------+------------+------+----------+-----------------+
+|  6 | PC01 | PC Desktop HP   |    7000000 |    9600000 |    3 |        2 |               5 |
+|  9 | LN01 | Notebook Lenovo |    9000000 |   12000000 |    3 |        2 |               5 |
++----+------+-----------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.002 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE harga_jual < 5000000 AND harga_jual > 500000;
++----+------+----------------+------------+------------+------+----------+-----------------+
+| id | kode | nama           | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+----------------+------------+------------+------+----------+-----------------+
+|  3 | K001 | Kulkas 2 pintu |    3500000 |    4867200 |    0 |        2 |               1 |
+|  4 | M001 | Meja Makan     |     500000 |     660000 |    6 |        3 |               2 |
++----+------+----------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.003 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE min_stok > stok;
++----+------+----------------+------------+------------+------+----------+-----------------+
+| id | kode | nama           | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+----------------+------------+------------+------+----------+-----------------+
+|  3 | K001 | Kulkas 2 pintu |    3500000 |    4867200 |    0 |        2 |               1 |
+|  5 | TK01 | Teh Kotak      |       3000 |       4235 |    0 |       10 |               4 |
+|  8 | AC01 | Notebook Acer  |    8000000 |   10800000 |    1 |        2 |               5 |
++----+------+----------------+------------+------------+------+----------+-----------------+
+3 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan ORDER BY tgl_lahir DESC;
++----+------+---------------+------+------------+------------+----------------------+----------+
+| id | kode | nama          | jk   | tmp_lahir  | tgl_lahir  | email                | kartu_id |
++----+------+---------------+------+------------+------------+----------------------+----------+
+|  1 | C001 | Agung Sedayu  | L    | Solo       | 2010-01-01 | sedayu@gmail.com     |        1 |
+|  9 | C009 | Ahmad Hasan   | L    | Surabaya   | 1992-10-15 | ahasan@gmail.com     |        4 |
+| 10 | C010 | Cassanndra    | P    | Belfast    | 1990-11-20 | casa90@gmail.com     |        1 |
+|  8 | C008 | Andre Haru    | L    | Surabaya   | 1990-07-15 | andre.haru@gmail.com |        4 |
+|  7 | C007 | Dewi Gyat     | P    | Jakarta    | 1988-12-01 | giyat@gmail.com      |        1 |
+|  6 | C006 | Gayatri Dwi   | P    | Jakarta    | 1987-11-28 | gaya87@gmail.com     |        1 |
+|  5 | C005 | Pradabashu    | L    | Pati       | 1985-04-02 | prada85@gmail.com    |        2 |
+|  3 | C003 | Sekar Mirah   | P    | Kediri     | 1983-02-20 | mirah@yahoo.com      |        1 |
+|  4 | C004 | Swandaru Geni | L    | Kediri     | 1981-01-04 | swandaru@yahoo.com   |        4 |
+|  2 | C002 | Pandan Wangi  | P    | Yogyakarta | 1950-01-01 | wangi@gmail.com      |        2 |
++----+------+---------------+------+------------+------------+----------------------+----------+
+10 rows in set (0.002 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE tmp_lahir = 'jakarta' AND jk = 'P';
++----+------+-------------+------+-----------+------------+------------------+----------+
+| id | kode | nama        | jk   | tmp_lahir | tgl_lahir  | email            | kartu_id |
++----+------+-------------+------+-----------+------------+------------------+----------+
+|  6 | C006 | Gayatri Dwi | P    | Jakarta   | 1987-11-28 | gaya87@gmail.com |        1 |
+|  7 | C007 | Dewi Gyat   | P    | Jakarta   | 1988-12-01 | giyat@gmail.com  |        1 |
++----+------+-------------+------+-----------+------------+------------------+----------+
+2 rows in set (0.002 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE id IN (2, 4, 6);
++----+------+---------------+------+------------+------------+--------------------+----------+
+| id | kode | nama          | jk   | tmp_lahir  | tgl_lahir  | email              | kartu_id |
++----+------+---------------+------+------------+------------+--------------------+----------+
+|  2 | C002 | Pandan Wangi  | P    | Yogyakarta | 1950-01-01 | wangi@gmail.com    |        2 |
+|  4 | C004 | Swandaru Geni | L    | Kediri     | 1981-01-04 | swandaru@yahoo.com |        4 |
+|  6 | C006 | Gayatri Dwi   | P    | Jakarta    | 1987-11-28 | gaya87@gmail.com   |        1 |
++----+------+---------------+------+------------+------------+--------------------+----------+
+3 rows in set (0.009 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE harga_jual >= 500000 AND harga_jual <= 6000000;
++----+------+------------------+------------+------------+------+----------+-----------------+
+| id | kode | nama             | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+------------------+------------+------------+------+----------+-----------------+
+|  1 | TV01 | Televisi 21 inch |    3500000 |    5241600 | NULL |        2 |               1 |
+|  3 | K001 | Kulkas 2 pintu   |    3500000 |    4867200 |    0 |        2 |               1 |
+|  4 | M001 | Meja Makan       |     500000 |     660000 |    6 |        3 |               2 |
++----+------+------------------+------------+------------+------+----------+-----------------+
+3 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE kode LIKE 'K%' OR kode LIKE 'M%';
++----+------+----------------+------------+------------+------+----------+-----------------+
+| id | kode | nama           | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+----------------+------------+------------+------+----------+-----------------+
+|  3 | K001 | Kulkas 2 pintu |    3500000 |    4867200 |    0 |        2 |               1 |
+|  4 | M001 | Meja Makan     |     500000 |     660000 |    6 |        3 |               2 |
++----+------+----------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.008 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE kode NOT LIKE 'M%';
++----+------+------------------+------------+------------+------+----------+-----------------+
+| id | kode | nama             | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+------------------+------------+------------+------+----------+-----------------+
+|  1 | TV01 | Televisi 21 inch |    3500000 |    5241600 | NULL |        2 |               1 |
+|  2 | TV02 | Televisi 40 inch |    5500000 |    7737600 |    5 |        2 |               1 |
+|  3 | K001 | Kulkas 2 pintu   |    3500000 |    4867200 |    0 |        2 |               1 |
+|  5 | TK01 | Teh Kotak        |       3000 |       4235 |    0 |       10 |               4 |
+|  6 | PC01 | PC Desktop HP    |    7000000 |    9600000 |    3 |        2 |               5 |
+|  7 | TB01 | Teh Botol        |       2000 |       3025 |   39 |       10 |               4 |
+|  8 | AC01 | Notebook Acer    |    8000000 |   10800000 |    1 |        2 |               5 |
+|  9 | LN01 | Notebook Lenovo  |    9000000 |   12000000 |    3 |        2 |               5 |
++----+------+------------------+------------+------------+------+----------+-----------------+
+8 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk WHERE nama LIKE '%televisi%';
++----+------+------------------+------------+------------+------+----------+-----------------+
+| id | kode | nama             | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+------------------+------------+------------+------+----------+-----------------+
+|  1 | TV01 | Televisi 21 inch |    3500000 |    5241600 | NULL |        2 |               1 |
+|  2 | TV02 | Televisi 40 inch |    5500000 |    7737600 |    5 |        2 |               1 |
++----+------+------------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE nama LIKE '%SA%';
++----+------+-------------+------+-----------+------------+------------------+----------+
+| id | kode | nama        | jk   | tmp_lahir | tgl_lahir  | email            | kartu_id |
++----+------+-------------+------+-----------+------------+------------------+----------+
+|  9 | C009 | Ahmad Hasan | L    | Surabaya  | 1992-10-15 | ahasan@gmail.com |        4 |
+| 10 | C010 | Cassanndra  | P    | Belfast   | 1990-11-20 | casa90@gmail.com |        1 |
++----+------+-------------+------+-----------+------------+------------------+----------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE tmp_lahir != 'jakarta' AND nama LIKE '%yo%';
+Empty set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan WHERE nama LIKE '_A%';
++----+------+--------------+------+------------+------------+------------------+----------+
+| id | kode | nama         | jk   | tmp_lahir  | tgl_lahir  | email            | kartu_id |
++----+------+--------------+------+------------+------------+------------------+----------+
+|  2 | C002 | Pandan Wangi | P    | Yogyakarta | 1950-01-01 | wangi@gmail.com  |        2 |
+|  6 | C006 | Gayatri Dwi  | P    | Jakarta    | 1987-11-28 | gaya87@gmail.com |        1 |
+| 10 | C010 | Cassanndra   | P    | Belfast    | 1990-11-20 | casa90@gmail.com |        1 |
++----+------+--------------+------+------------+------------+------------------+----------+
+3 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk ORDER BY harga_beli DESC LIMIT 2;
++----+------+-----------------+------------+------------+------+----------+-----------------+
+| id | kode | nama            | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+-----------------+------------+------------+------+----------+-----------------+
+|  9 | LN01 | Notebook Lenovo |    9000000 |   12000000 |    3 |        2 |               5 |
+|  8 | AC01 | Notebook Acer   |    8000000 |   10800000 |    1 |        2 |               5 |
++----+------+-----------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk ORDER BY harga_beli ASC LIMIT 1;
++----+------+-----------+------------+------------+------+----------+-----------------+
+| id | kode | nama      | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+-----------+------------+------------+------+----------+-----------------+
+|  7 | TB01 | Teh Botol |       2000 |       3025 |   39 |       10 |               4 |
++----+------+-----------+------------+------------+------+----------+-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk ORDER BY stok DESC LIMIT 1;
++----+------+-----------+------------+------------+------+----------+-----------------+
+| id | kode | nama      | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+-----------+------------+------------+------+----------+-----------------+
+|  7 | TB01 | Teh Botol |       2000 |       3025 |   39 |       10 |               4 |
++----+------+-----------+------------+------------+------+----------+-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM produk ORDER BY stok ASC LIMIT 2;
++----+------+------------------+------------+------------+------+----------+-----------------+
+| id | kode | nama             | harga_beli | harga_jual | stok | min_stok | jenis_produk_id |
++----+------+------------------+------------+------------+------+----------+-----------------+
+|  1 | TV01 | Televisi 21 inch |    3500000 |    5241600 | NULL |        2 |               1 |
+|  3 | K001 | Kulkas 2 pintu   |    3500000 |    4867200 |    0 |        2 |               1 |
++----+------+------------------+------------+------------+------+----------+-----------------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan ORDER BY tgl_lahir DESC LIMIT 1;
++----+------+--------------+------+-----------+------------+------------------+----------+
+| id | kode | nama         | jk   | tmp_lahir | tgl_lahir  | email            | kartu_id |
++----+------+--------------+------+-----------+------------+------------------+----------+
+|  1 | C001 | Agung Sedayu | L    | Solo      | 2010-01-01 | sedayu@gmail.com |        1 |
++----+------+--------------+------+-----------+------------+------------------+----------+
+1 row in set (0.008 sec)
+
+MariaDB [dbtransaksi]> SELECT * FROM pelanggan ORDER BY tgl_lahir ASC LIMIT 1;
++----+------+--------------+------+------------+------------+-----------------+----------+
+| id | kode | nama         | jk   | tmp_lahir  | tgl_lahir  | email           | kartu_id |
++----+------+--------------+------+------------+------------+-----------------+----------+
+|  2 | C002 | Pandan Wangi | P    | Yogyakarta | 1950-01-01 | wangi@gmail.com |        2 |
++----+------+--------------+------+------------+------------+-----------------+----------+
+1 row in set (0.001 sec)
