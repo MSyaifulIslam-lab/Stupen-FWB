@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kalkulasi gaji</title>
+  </head>
+  <body>
+    <script>
+      function hitungGajiBersihIfElse(golongan, statusMenikah) {
+        let gaji = 0;
+        let tunjangan = 0;
+
+        if (golongan === 1) {
+          gaji = 10000000;
+        } else if (golongan === 2) {
+          gaji = 15000000;
+          if (statusMenikah) {
+            tunjangan = 2000000;
+          }
+        } else if (golongan === 3) {
+          gaji = 20000000;
+        } else {
+          return "Golongan tidak valid.";
+        }
+
+        const gajiBersih = gaji + tunjangan;
+        return gajiBersih;
+      }
+
+      // Contoh Penggunaan if-else
+      console.log("Menggunakan if-else:");
+      console.log(
+        "Golongan 1, belum menikah: " + hitungGajiBersihIfElse(1, false)
+      ); // Output: 10000000
+      console.log(
+        "Golongan 2, sudah menikah: " + hitungGajiBersihIfElse(2, true)
+      ); // Output: 17000000
+      console.log(
+        "Golongan 2, belum menikah: " + hitungGajiBersihIfElse(2, false)
+      ); // Output: 15000000
+      console.log(
+        "Golongan 3, sudah menikah: " + hitungGajiBersihIfElse(3, true)
+      ); // Output: 20000000
+      console.log("Golongan 4: " + hitungGajiBersihIfElse(4, true));
+    </script>
+  </body>
+</html>
