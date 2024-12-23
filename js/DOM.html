@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Menambahkan 10 Foto</title>
+  </head>
+  <body>
+    <div id="container-gambar"></div>
+
+    <script>
+      const containerGambar = document.getElementById("container-gambar");
+      const jumlahGambar = 10;
+      const baseUrlGambar = "https://picsum.photos/200";
+
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < jumlahGambar; i++) {
+        const img = document.createElement("img");
+        img.src = `${baseUrlGambar}?random=${i}`;
+        img.alt = `Gambar ${i + 1}`;
+        fragment.appendChild(img);
+      }
+
+      containerGambar.appendChild(fragment);
+    </script>
+  </body>
+</html>
